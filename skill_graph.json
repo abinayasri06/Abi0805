@@ -1,0 +1,335 @@
+{
+  "domains": [
+    "Artificial Intelligence & Machine Learning",
+    "Full-Stack Web Development",
+    "Data Science & Analytics",
+    "Cybersecurity Essentials",
+    "Cloud Computing & DevOps"
+  ],
+  "nodes": [
+    {
+      "id": "py_basics",
+      "name": "Python Programming Fundamentals",
+      "domain": "Artificial Intelligence & Machine Learning",
+      "category": "Foundations",
+      "difficulty": "Beginner",
+      "estimated_hours": 12,
+      "prerequisites": [],
+      "description": "Variables, loops, functions, object-oriented programming (OOP), and error handling in Python."
+    },
+    {
+      "id": "math_la",
+      "name": "Linear Algebra & Vector Calculus",
+      "domain": "Artificial Intelligence & Machine Learning",
+      "category": "Mathematics",
+      "difficulty": "Beginner",
+      "estimated_hours": 14,
+      "prerequisites": [],
+      "description": "Vectors, matrices, matrix multiplication, eigenvalues, eigenvectors, gradients, and partial derivatives."
+    },
+    {
+      "id": "data_manipulation",
+      "name": "Data Manipulation with NumPy & Pandas",
+      "domain": "Artificial Intelligence & Machine Learning",
+      "category": "Data Engineering",
+      "difficulty": "Intermediate",
+      "estimated_hours": 15,
+      "prerequisites": ["py_basics"],
+      "description": "Multidimensional arrays, dataframes, indexing, grouping, merging, and cleaning dirty datasets."
+    },
+    {
+      "id": "prob_stats",
+      "name": "Probability & Applied Statistics",
+      "domain": "Artificial Intelligence & Machine Learning",
+      "category": "Mathematics",
+      "difficulty": "Intermediate",
+      "estimated_hours": 12,
+      "prerequisites": ["math_la"],
+      "description": "Random variables, distributions, Bayes theorem, hypothesis testing, p-values, and confidence intervals."
+    },
+    {
+      "id": "classical_ml",
+      "name": "Supervised & Unsupervised Machine Learning",
+      "domain": "Artificial Intelligence & Machine Learning",
+      "category": "Core AI",
+      "difficulty": "Intermediate",
+      "estimated_hours": 20,
+      "prerequisites": ["data_manipulation", "prob_stats"],
+      "description": "Linear regression, decision trees, random forests, SVMs, k-means clustering, and cross-validation."
+    },
+    {
+      "id": "feature_eng",
+      "name": "Feature Engineering & Model Evaluation",
+      "domain": "Artificial Intelligence & Machine Learning",
+      "category": "Core AI",
+      "difficulty": "Intermediate",
+      "estimated_hours": 10,
+      "prerequisites": ["classical_ml"],
+      "description": "Feature scaling, one-hot encoding, PCA, ROC-AUC, precision-recall, and bias-variance tradeoff."
+    },
+    {
+      "id": "deep_learning",
+      "name": "Deep Learning & Neural Networks",
+      "domain": "Artificial Intelligence & Machine Learning",
+      "category": "Advanced AI",
+      "difficulty": "Advanced",
+      "estimated_hours": 25,
+      "prerequisites": ["classical_ml", "feature_eng"],
+      "description": "Perceptrons, backpropagation, activation functions, optimizers (Adam, SGD), PyTorch/TensorFlow."
+    },
+    {
+      "id": "nlp_transformers",
+      "name": "NLP & Generative AI / Transformers",
+      "domain": "Artificial Intelligence & Machine Learning",
+      "category": "Advanced AI",
+      "difficulty": "Advanced",
+      "estimated_hours": 22,
+      "prerequisites": ["deep_learning"],
+      "description": "Tokenization, embeddings, self-attention, BERT, GPT, and fine-tuning Large Language Models."
+    },
+    {
+      "id": "computer_vision",
+      "name": "Computer Vision & CNNs",
+      "domain": "Artificial Intelligence & Machine Learning",
+      "category": "Advanced AI",
+      "difficulty": "Advanced",
+      "estimated_hours": 20,
+      "prerequisites": ["deep_learning"],
+      "description": "Convolutional layers, pooling, object detection (YOLO), segmentation, and OpenCV techniques."
+    },
+    {
+      "id": "mlops_deploy",
+      "name": "MLOps & Model Deployment",
+      "domain": "Artificial Intelligence & Machine Learning",
+      "category": "Production",
+      "difficulty": "Advanced",
+      "estimated_hours": 16,
+      "prerequisites": ["classical_ml"],
+      "description": "FastAPI model serving, Docker containerization, model registries, and drift monitoring."
+    },
+
+    {
+      "id": "html_css",
+      "name": "Modern HTML5 & Responsive CSS3",
+      "domain": "Full-Stack Web Development",
+      "category": "Frontend",
+      "difficulty": "Beginner",
+      "estimated_hours": 10,
+      "prerequisites": [],
+      "description": "Semantic HTML, Flexbox, Grid, media queries, and responsive design systems."
+    },
+    {
+      "id": "js_foundations",
+      "name": "JavaScript ES6+ & DOM Manipulation",
+      "domain": "Full-Stack Web Development",
+      "category": "Frontend",
+      "difficulty": "Beginner",
+      "estimated_hours": 16,
+      "prerequisites": ["html_css"],
+      "description": "Arrow functions, promises, async/await, closures, fetch API, and browser events."
+    },
+    {
+      "id": "react_basics",
+      "name": "React.js & State Management",
+      "domain": "Full-Stack Web Development",
+      "category": "Frontend",
+      "difficulty": "Intermediate",
+      "estimated_hours": 20,
+      "prerequisites": ["js_foundations"],
+      "description": "Components, JSX, useState, useEffect, custom hooks, and context API."
+    },
+    {
+      "id": "node_express",
+      "name": "Node.js & Express RESTful APIs",
+      "domain": "Full-Stack Web Development",
+      "category": "Backend",
+      "difficulty": "Intermediate",
+      "estimated_hours": 18,
+      "prerequisites": ["js_foundations"],
+      "description": "Server architecture, middleware, routing, JWT authentication, and error handling."
+    },
+    {
+      "id": "databases_sql_nosql",
+      "name": "Databases (PostgreSQL & MongoDB)",
+      "domain": "Full-Stack Web Development",
+      "category": "Backend",
+      "difficulty": "Intermediate",
+      "estimated_hours": 15,
+      "prerequisites": ["node_express"],
+      "description": "Relational schemas, SQL queries, indexing, ORMs (Prisma), NoSQL document storage, and transactions."
+    },
+    {
+      "id": "fullstack_integration",
+      "name": "Full-Stack Architecture & Auth",
+      "domain": "Full-Stack Web Development",
+      "category": "Fullstack",
+      "difficulty": "Advanced",
+      "estimated_hours": 20,
+      "prerequisites": ["react_basics", "databases_sql_nosql"],
+      "description": "Client-server communication, OAuth, cookies/sessions, CORS, role-based access control, and state sync."
+    },
+    {
+      "id": "devops_web",
+      "name": "CI/CD & Cloud Deployment for Web",
+      "domain": "Full-Stack Web Development",
+      "category": "DevOps",
+      "difficulty": "Advanced",
+      "estimated_hours": 12,
+      "prerequisites": ["fullstack_integration"],
+      "description": "GitHub Actions, Docker containers, deployment on Render/Vercel/AWS, and SSL configuration."
+    },
+
+    {
+      "id": "sql_analysis",
+      "name": "SQL for Data Analysis & Reporting",
+      "domain": "Data Science & Analytics",
+      "category": "Data Analysis",
+      "difficulty": "Beginner",
+      "estimated_hours": 12,
+      "prerequisites": [],
+      "description": "Aggregations, Window functions, JOINs, CTEs, and cohort analysis using relational queries."
+    },
+    {
+      "id": "python_ds",
+      "name": "Python for Data Science",
+      "domain": "Data Science & Analytics",
+      "category": "Data Analysis",
+      "difficulty": "Beginner",
+      "estimated_hours": 14,
+      "prerequisites": [],
+      "description": "Jupyter notebooks, Pandas dataframes, data munging, date/time manipulation, and regex."
+    },
+    {
+      "id": "eda_visualization",
+      "name": "Exploratory Data Analysis & Tableau/Seaborn",
+      "domain": "Data Science & Analytics",
+      "category": "Visualization",
+      "difficulty": "Intermediate",
+      "estimated_hours": 14,
+      "prerequisites": ["python_ds", "sql_analysis"],
+      "description": "Storytelling with data, correlation matrices, distribution plots, Seaborn, Matplotlib, and dashboard design."
+    },
+    {
+      "id": "statistical_modeling",
+      "name": "Statistical Modeling & A/B Testing",
+      "domain": "Data Science & Analytics",
+      "category": "Analytics",
+      "difficulty": "Intermediate",
+      "estimated_hours": 16,
+      "prerequisites": ["eda_visualization"],
+      "description": "Sample size calculation, p-values, ANOVA, regression diagnostics, and A/B test experiment design."
+    },
+    {
+      "id": "predictive_analytics",
+      "name": "Predictive Analytics & Forecasting",
+      "domain": "Data Science & Analytics",
+      "category": "Advanced Analytics",
+      "difficulty": "Advanced",
+      "estimated_hours": 18,
+      "prerequisites": ["statistical_modeling"],
+      "description": "Time series analysis (ARIMA, Prophet), customer churn prediction, and business metric optimization."
+    },
+
+    {
+      "id": "net_fundamentals",
+      "name": "Computer Networks & Protocols",
+      "domain": "Cybersecurity Essentials",
+      "category": "Foundations",
+      "difficulty": "Beginner",
+      "estimated_hours": 14,
+      "prerequisites": [],
+      "description": "OSI model, TCP/IP, DNS, DHCP, subnetting, packet inspection with Wireshark."
+    },
+    {
+      "id": "linux_security",
+      "name": "Linux Command Line & System Security",
+      "domain": "Cybersecurity Essentials",
+      "category": "Foundations",
+      "difficulty": "Beginner",
+      "estimated_hours": 12,
+      "prerequisites": [],
+      "description": "Bash scripting, file permissions, users/groups, SSH keys, cron jobs, and firewall setup."
+    },
+    {
+      "id": "security_defenses",
+      "name": "Network Security & Cryptography",
+      "domain": "Cybersecurity Essentials",
+      "category": "Defense",
+      "difficulty": "Intermediate",
+      "estimated_hours": 18,
+      "prerequisites": ["net_fundamentals", "linux_security"],
+      "description": "Symmetric/asymmetric encryption, hashing, TLS/SSL, IDS/IPS, and VPN configurations."
+    },
+    {
+      "id": "web_penetration",
+      "name": "Ethical Hacking & Web Vulnerabilities",
+      "domain": "Cybersecurity Essentials",
+      "category": "Offensive",
+      "difficulty": "Intermediate",
+      "estimated_hours": 20,
+      "prerequisites": ["security_defenses"],
+      "description": "OWASP Top 10, SQL Injection, XSS, CSRF, Burp Suite, and ethical vulnerability disclosure."
+    },
+    {
+      "id": "soc_incident_response",
+      "name": "SOC Analysis & Incident Response",
+      "domain": "Cybersecurity Essentials",
+      "category": "Operations",
+      "difficulty": "Advanced",
+      "estimated_hours": 18,
+      "prerequisites": ["web_penetration"],
+      "description": "SIEM tools (Splunk, Elastic), log analysis, threat hunting, digital forensics, and incident remediation."
+    },
+
+    {
+      "id": "cloud_fundamentals",
+      "name": "Cloud Computing Fundamentals (AWS/Azure)",
+      "domain": "Cloud Computing & DevOps",
+      "category": "Cloud Core",
+      "difficulty": "Beginner",
+      "estimated_hours": 12,
+      "prerequisites": [],
+      "description": "Cloud concepts (IaaS, PaaS, SaaS), regions, IAM security, compute instances (EC2), and S3 storage."
+    },
+    {
+      "id": "docker_containers",
+      "name": "Docker & Containerization",
+      "domain": "Cloud Computing & DevOps",
+      "category": "DevOps",
+      "difficulty": "Intermediate",
+      "estimated_hours": 14,
+      "prerequisites": ["cloud_fundamentals"],
+      "description": "Dockerfiles, images, containers, multi-stage builds, Docker Compose, and networking."
+    },
+    {
+      "id": "kubernetes_orchestration",
+      "name": "Kubernetes & Cluster Orchestration",
+      "domain": "Cloud Computing & DevOps",
+      "category": "DevOps",
+      "difficulty": "Advanced",
+      "estimated_hours": 22,
+      "prerequisites": ["docker_containers"],
+      "description": "Pods, Deployments, Services, ConfigMaps, Ingress controllers, and Helm charts."
+    },
+    {
+      "id": "iac_terraform",
+      "name": "Infrastructure as Code with Terraform",
+      "domain": "Cloud Computing & DevOps",
+      "category": "Infrastructure",
+      "difficulty": "Advanced",
+      "estimated_hours": 16,
+      "prerequisites": ["cloud_fundamentals"],
+      "description": "Terraform providers, resource state management, variables, modules, and automated cloud provisioning."
+    },
+    {
+      "id": "cicd_pipelines",
+      "name": "CI/CD Automation (GitHub Actions & GitLab)",
+      "domain": "Cloud Computing & DevOps",
+      "category": "Automation",
+      "difficulty": "Advanced",
+      "estimated_hours": 15,
+      "prerequisites": ["docker_containers"],
+      "description": "Automated testing, build artifacts, linting workflows, secrets management, and automated release deployment."
+    }
+  ]
+}

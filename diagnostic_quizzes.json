@@ -1,0 +1,237 @@
+{
+  "Artificial Intelligence & Machine Learning": [
+    {
+      "id": "aiml_q1",
+      "topic_id": "py_basics",
+      "difficulty": "Beginner",
+      "question": "Which Python data structure is mutable, ordered, and allows duplicate elements?",
+      "options": ["Tuple", "Set", "List", "Dictionary key"],
+      "correct_idx": 2,
+      "explanation": "Lists in Python are mutable and ordered sequences that permit duplicate elements."
+    },
+    {
+      "id": "aiml_q2",
+      "topic_id": "math_la",
+      "difficulty": "Beginner",
+      "question": "If two non-zero vectors in an inner product space have a dot product equal to 0, what does this indicate?",
+      "options": ["The vectors are parallel", "The vectors are orthogonal (perpendicular)", "The vectors have identical magnitude", "One vector is an inverse of the other"],
+      "correct_idx": 1,
+      "explanation": "A dot product of zero between non-zero vectors means cos(theta) = 0, indicating they are perpendicular/orthogonal."
+    },
+    {
+      "id": "aiml_q3",
+      "topic_id": "data_manipulation",
+      "difficulty": "Intermediate",
+      "question": "In Pandas, which method is best suited to handle missing values by filling them with the mean of the column?",
+      "options": ["df.dropna()", "df.fillna(df.mean())", "df.replace_null(method='mean')", "df.impute()"],
+      "correct_idx": 1,
+      "explanation": "df.fillna(df.mean()) fills all missing/NaN values with column averages."
+    },
+    {
+      "id": "aiml_q4",
+      "topic_id": "classical_ml",
+      "difficulty": "Intermediate",
+      "question": "What is the primary consequence of High Variance in a Machine Learning model?",
+      "options": ["Underfitting: fails to capture training data patterns", "Overfitting: performs well on training data but poorly on unseen test data", "Model coefficients collapse to zero", "Training time decreases exponentially"],
+      "correct_idx": 1,
+      "explanation": "High variance corresponds to overfitting, where the model captures noise in training data."
+    },
+    {
+      "id": "aiml_q5",
+      "topic_id": "deep_learning",
+      "difficulty": "Advanced",
+      "question": "Why is the Rectified Linear Unit (ReLU) activation function commonly preferred over Sigmoid in deep hidden layers?",
+      "options": ["It scales outputs strictly between 0 and 1", "It mitigates the vanishing gradient problem and computes faster", "It is mathematically differentiable everywhere including 0", "It is bounded both above and below"],
+      "correct_idx": 1,
+      "explanation": "ReLU prevents gradients from saturating for positive activations, mitigating vanishing gradients during backpropagation."
+    }
+  ],
+  "Full-Stack Web Development": [
+    {
+      "id": "web_q1",
+      "topic_id": "html_css",
+      "difficulty": "Beginner",
+      "question": "Which CSS display property allows flexible one-dimensional row or column layouts with dynamic alignment?",
+      "options": ["display: block", "display: flex", "display: table", "display: inline"],
+      "correct_idx": 1,
+      "explanation": "Flexbox (display: flex) is a CSS layout mode designed for 1-dimensional layouts."
+    },
+    {
+      "id": "web_q2",
+      "topic_id": "js_foundations",
+      "difficulty": "Beginner",
+      "question": "What will `console.log(typeof NaN)` print in JavaScript?",
+      "options": ["'undefined'", "'null'", "'number'", "'NaN'"],
+      "correct_idx": 2,
+      "explanation": "In JavaScript specification, NaN is technically a numeric data type representing Not-a-Number."
+    },
+    {
+      "id": "web_q3",
+      "topic_id": "react_basics",
+      "difficulty": "Intermediate",
+      "question": "In React, which hook is used to execute side effects such as data fetching or subscriptions?",
+      "options": ["useState", "useReducer", "useEffect", "useMemo"],
+      "correct_idx": 2,
+      "explanation": "useEffect lets functional React components synchronize with external systems and perform side effects."
+    },
+    {
+      "id": "web_q4",
+      "topic_id": "node_express",
+      "difficulty": "Intermediate",
+      "question": "What is the primary function of Express middleware functions in Node.js?",
+      "options": ["Compile JSX into HTML", "Intercept, execute logic, and modify the req and res objects before passing control", "Manage relational database indexes directly", "Act as a web browser rendering engine"],
+      "correct_idx": 1,
+      "explanation": "Middleware functions have access to the request and response cycle and can invoke next()."
+    },
+    {
+      "id": "web_q5",
+      "topic_id": "databases_sql_nosql",
+      "difficulty": "Advanced",
+      "question": "Which HTTP header is primarily used in REST APIs to securely pass a JSON Web Token (JWT)?",
+      "options": ["Content-Type: application/jwt", "Authorization: Bearer <token>", "Set-Cookie: jwt=<token>", "X-Requested-With: JWT"],
+      "correct_idx": 1,
+      "explanation": "Standard REST API practice uses Authorization header with the Bearer schema."
+    }
+  ],
+  "Data Science & Analytics": [
+    {
+      "id": "ds_q1",
+      "topic_id": "sql_analysis",
+      "difficulty": "Beginner",
+      "question": "Which SQL clause is used to filter aggregated group results produced by GROUP BY?",
+      "options": ["WHERE", "ORDER BY", "HAVING", "LIMIT"],
+      "correct_idx": 2,
+      "explanation": "HAVING filters groups post-aggregation, while WHERE filters individual records pre-aggregation."
+    },
+    {
+      "id": "ds_q2",
+      "topic_id": "python_ds",
+      "difficulty": "Beginner",
+      "question": "In Pandas, what does `df.describe()` return?",
+      "options": ["A summary of column data types only", "Summary statistics (mean, std, min, percentiles, max) for numerical columns", "The first 5 rows of the DataFrame", "The SQL schema definition"],
+      "correct_idx": 1,
+      "explanation": "df.describe() computes descriptive statistics summarizing central tendency and dispersion."
+    },
+    {
+      "id": "ds_q3",
+      "topic_id": "eda_visualization",
+      "difficulty": "Intermediate",
+      "question": "Which chart type is most effective for visualizing the distribution and outlier spread across 5 numerical categories?",
+      "options": ["Pie Chart", "Box Plot (Box-and-Whisker)", "Stacked Bar Chart", "Donut Chart"],
+      "correct_idx": 1,
+      "explanation": "Box plots visualize medians, quartiles, interquartile ranges, and outliers clearly across categories."
+    },
+    {
+      "id": "ds_q4",
+      "topic_id": "statistical_modeling",
+      "difficulty": "Intermediate",
+      "question": "In hypothesis testing, a p-value less than the significance level alpha (e.g. 0.05) implies:",
+      "options": ["The null hypothesis is proven definitely true", "We reject the null hypothesis in favor of the alternative hypothesis", "The experiment had insufficient sample size", "The variance is equal to zero"],
+      "correct_idx": 1,
+      "explanation": "p-value < alpha provides sufficient evidence against the null hypothesis, rejecting it."
+    },
+    {
+      "id": "ds_q5",
+      "topic_id": "predictive_analytics",
+      "difficulty": "Advanced",
+      "question": "In Time Series forecasting, what property means that a series has a constant mean and variance over time?",
+      "options": ["Autocorrelation", "Stationarity", "Heteroscedasticity", "Seasonality"],
+      "correct_idx": 1,
+      "explanation": "A stationary time series is one whose statistical properties (mean, variance) do not depend on the time at which the series is observed."
+    }
+  ],
+  "Cybersecurity Essentials": [
+    {
+      "id": "sec_q1",
+      "topic_id": "net_fundamentals",
+      "difficulty": "Beginner",
+      "question": "Which layer of the OSI model handles end-to-end communication, reliability, and segmentation (e.g., TCP, UDP)?",
+      "options": ["Network Layer (Layer 3)", "Transport Layer (Layer 4)", "Data Link Layer (Layer 2)", "Session Layer (Layer 5)"],
+      "correct_idx": 1,
+      "explanation": "Layer 4 (Transport) is responsible for host-to-host communication, port numbers, flow control, and reliability."
+    },
+    {
+      "id": "sec_q2",
+      "topic_id": "linux_security",
+      "difficulty": "Beginner",
+      "question": "In Linux file permissions, what numeric octal representation gives Read, Write, and Execute to the owner, and Read-only to group and others?",
+      "options": ["777", "644", "744", "755"],
+      "correct_idx": 2,
+      "explanation": "Owner (4+2+1 = 7), Group (4), Others (4) results in octal 744."
+    },
+    {
+      "id": "sec_q3",
+      "topic_id": "security_defenses",
+      "difficulty": "Intermediate",
+      "question": "What is the primary difference between symmetric and asymmetric encryption?",
+      "options": ["Symmetric uses two keys; asymmetric uses one key", "Symmetric uses the same key for encryption and decryption; asymmetric uses a public/private key pair", "Symmetric cannot encrypt files larger than 1MB", "Asymmetric does not require mathematical algorithms"],
+      "correct_idx": 1,
+      "explanation": "Symmetric cryptography shares a single secret key, whereas asymmetric cryptography utilizes public/private key pairs."
+    },
+    {
+      "id": "sec_q4",
+      "topic_id": "web_penetration",
+      "difficulty": "Intermediate",
+      "question": "What is the most secure method to prevent SQL Injection attacks in web applications?",
+      "options": ["Filtering out single quotes with regex", "Using Parameterized Queries (Prepared Statements)", "Encrypting the entire SQL database", "Limiting SQL queries to 50 characters"],
+      "correct_idx": 1,
+      "explanation": "Parameterized queries treat user input strictly as parameters/literals rather than executable code."
+    },
+    {
+      "id": "sec_q5",
+      "topic_id": "soc_incident_response",
+      "difficulty": "Advanced",
+      "question": "In a Security Operations Center (SOC), what does SIEM stand for?",
+      "options": ["Security Incident & Event Management", "System Information & Encryption Module", "Secure IP & Ethernet Mechanism", "Server Inspection & Execution Monitor"],
+      "correct_idx": 0,
+      "explanation": "SIEM stands for Security Information and Event Management."
+    }
+  ],
+  "Cloud Computing & DevOps": [
+    {
+      "id": "cld_q1",
+      "topic_id": "cloud_fundamentals",
+      "difficulty": "Beginner",
+      "question": "Which cloud computing model provides virtualized computing resources over the internet, giving users maximum OS control?",
+      "options": ["Software as a Service (SaaS)", "Platform as a Service (PaaS)", "Infrastructure as a Service (IaaS)", "Function as a Service (FaaS)"],
+      "correct_idx": 2,
+      "explanation": "IaaS (e.g. AWS EC2) delivers fundamental compute, storage, and networking resources on demand."
+    },
+    {
+      "id": "cld_q2",
+      "topic_id": "docker_containers",
+      "difficulty": "Intermediate",
+      "question": "What is the primary role of a Dockerfile?",
+      "options": ["To configure network switches in AWS", "A text script containing instructions to assemble a container image", "To run automated load testing", "To store production database passwords"],
+      "correct_idx": 1,
+      "explanation": "A Dockerfile contains automated instructions used by docker build to create a container image."
+    },
+    {
+      "id": "cld_q3",
+      "topic_id": "kubernetes_orchestration",
+      "difficulty": "Advanced",
+      "question": "What is the smallest deployable computing unit in Kubernetes?",
+      "options": ["Cluster", "Pod", "Node", "Namespace"],
+      "correct_idx": 1,
+      "explanation": "A Pod represents a single instance of a running process in Kubernetes containing one or more containers."
+    },
+    {
+      "id": "cld_q4",
+      "topic_id": "iac_terraform",
+      "difficulty": "Advanced",
+      "question": "In Terraform, what file keeps track of the metadata and IDs of the actual infrastructure created in cloud providers?",
+      "options": ["terraform.lock.hcl", "terraform.tfvars", "terraform.tfstate", "main.tf"],
+      "correct_idx": 2,
+      "explanation": "The terraform.tfstate file maps real world resources to your configuration."
+    },
+    {
+      "id": "cld_q5",
+      "topic_id": "cicd_pipelines",
+      "difficulty": "Advanced",
+      "question": "What is the fundamental goal of Continuous Integration (CI)?",
+      "options": ["Deploy code directly to clients without human review", "Automatically merge, build, and test developer code changes frequently into a shared repository", "Eliminate the need for unit testing", "Manage physical data centers"],
+      "correct_idx": 1,
+      "explanation": "Continuous Integration automates code integration and testing to detect regressions early."
+    }
+  ]
+}
