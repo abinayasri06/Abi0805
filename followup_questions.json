@@ -1,0 +1,132 @@
+{
+  "CHEST_PAIN": {
+    "current_status": {
+      "question": "Are you experiencing chest discomfort or pain right at this moment?",
+      "field": "current_status",
+      "options": ["Yes, currently present", "No, it has stopped"],
+      "type": "boolean_status"
+    },
+    "breathing_difficulty": {
+      "question": "Are you also having any shortness of breath or difficulty breathing?",
+      "field": "breathing_difficulty",
+      "options": ["Yes", "No", "I don't know"],
+      "type": "boolean"
+    },
+    "severity": {
+      "question": "On a scale of 1 to 10 (where 1 is mild and 10 is unbearable), how would you describe the discomfort?",
+      "field": "severity",
+      "options": ["Mild (1-3)", "Moderate (4-6)", "Severe (7-10)", "I don't know"],
+      "type": "scale"
+    },
+    "onset": {
+      "question": "Approximately when did this chest discomfort begin?",
+      "field": "onset",
+      "options": ["Just now (under 1 hour)", "Earlier today", "Yesterday or longer ago", "I don't know"],
+      "type": "text"
+    }
+  },
+  "BREATHING_DIFFICULTY": {
+    "breathing_difficulty_present": {
+      "question": "Are you having difficulty breathing right now?",
+      "field": "breathing_difficulty_present",
+      "options": ["Yes, actively breathing hard", "No, feeling normal now", "I don't know"],
+      "type": "boolean"
+    },
+    "can_speak_full_sentences": {
+      "question": "Can you comfortably speak in full sentences without needing to pause for breath?",
+      "field": "can_speak_full_sentences",
+      "options": ["Yes, can speak normally", "No, need to pause / struggling to talk", "I don't know"],
+      "type": "boolean"
+    },
+    "onset": {
+      "question": "Did this breathing difficulty come on suddenly or gradually over several hours/days?",
+      "field": "onset",
+      "options": ["Suddenly / acute", "Gradually", "I don't know"],
+      "type": "text"
+    },
+    "severity": {
+      "question": "How severe is your breathing difficulty currently?",
+      "field": "severity",
+      "options": ["Mild", "Moderate", "Severe / Gaspy", "I don't know"],
+      "type": "scale"
+    }
+  },
+  "FEVER": {
+    "stiff_neck_or_confusion": {
+      "question": "Do you have any stiff neck, unusual confusion, extreme dizziness, or sensitivity to light?",
+      "field": "stiff_neck_or_confusion",
+      "options": ["Yes", "No", "I don't know"],
+      "type": "boolean"
+    },
+    "duration_days": {
+      "question": "How many days have you had this fever?",
+      "field": "duration_days",
+      "options": ["3 days or less", "More than 3 days", "I don't know"],
+      "type": "category"
+    },
+    "temperature_reported": {
+      "question": "Have you measured your body temperature? If so, what was the reading?",
+      "field": "temperature_reported",
+      "options": ["Above 39°C (102.2°F)", "Between 38°C - 39°C (100.4°F - 102.2°F)", "Normal / not measured", "I don't know"],
+      "type": "text"
+    },
+    "rash_present": {
+      "question": "Have you noticed any new skin rash or purple/red spots?",
+      "field": "rash_present",
+      "options": ["Yes", "No", "I don't know"],
+      "type": "boolean"
+    }
+  },
+  "INJURY": {
+    "severe_deformity_or_bleeding": {
+      "question": "Is there any visible bone deformity, deep open wound, or uncontrolled bleeding?",
+      "field": "severe_deformity_or_bleeding",
+      "options": ["Yes", "No", "I don't know"],
+      "type": "boolean"
+    },
+    "can_bear_weight": {
+      "question": "If an arm or leg was injured, are you able to bear weight, walk, or move the injured limb?",
+      "field": "can_bear_weight",
+      "options": ["Yes, able to use/bear weight", "No, unable to use/bear weight", "Not applicable (other body area)", "I don't know"],
+      "type": "boolean"
+    },
+    "numbness_or_loss_of_pulse": {
+      "question": "Do you feel numbness, tingling, or coldness past the site of the injury?",
+      "field": "numbness_or_loss_of_pulse",
+      "options": ["Yes", "No", "I don't know"],
+      "type": "boolean"
+    },
+    "location": {
+      "question": "Which specific body area was injured?",
+      "field": "location",
+      "options": ["Head / Neck", "Arm / Wrist / Hand", "Leg / Ankle / Foot", "Torso / Back", "I don't know"],
+      "type": "text"
+    }
+  },
+  "ABDOMINAL_PAIN": {
+    "vomiting_blood_or_rigid_abdomen": {
+      "question": "Is your stomach hard like a wooden board, or have you vomited blood or noticed black stool?",
+      "field": "vomiting_blood_or_rigid_abdomen",
+      "options": ["Yes", "No", "I don't know"],
+      "type": "boolean"
+    },
+    "is_worsening": {
+      "question": "Is the abdominal pain progressively getting worse over time?",
+      "field": "is_worsening",
+      "options": ["Yes, steadily worsening", "No, steady or improving", "I don't know"],
+      "type": "boolean"
+    },
+    "location": {
+      "question": "Where is the pain located primarily?",
+      "field": "location",
+      "options": ["Upper abdomen", "Lower right abdomen", "Lower left abdomen", "All over / generalized", "I don't know"],
+      "type": "text"
+    },
+    "severity_score": {
+      "question": "How intense is the pain on a scale from 1 (mild) to 10 (severe)?",
+      "field": "severity_score",
+      "options": ["Mild (1-3)", "Moderate (4-6)", "Severe (7-10)", "I don't know"],
+      "type": "scale"
+    }
+  }
+}

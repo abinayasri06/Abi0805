@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TriageAI – Patient Intake & Triage Assistant</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Navigation / Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            <path d="M12 5v14"/>
+            <path d="M5 12h14"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">TriageAI</h1>
+          <p class="brand-subtitle">Patient Intake & Triage Assistant</p>
+        </div>
+      </div>
+
+      <div class="header-badges">
+        <span class="badge badge-subtle" id="api-status-badge">
+          <span class="status-dot"></span> Authoritative Rule Engine: Active
+        </span>
+        <span class="badge badge-outline">Track: PS01</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-layout">
+    <!-- Clinical Disclaimer Banner -->
+    <div class="disclaimer-banner">
+      <div class="disclaimer-icon">⚠️</div>
+      <div class="disclaimer-text">
+        <strong>Triage Decision-Support Only:</strong> This prototype routes patients by urgency and department based on deterministic clinical protocols. It does <strong>NOT</strong> diagnose medical diseases or replace certified medical personnel.
+      </div>
+    </div>
+
+    <!-- Stepper / Progress Bar -->
+    <div class="progress-card">
+      <div class="stepper">
+        <div class="step-item active" id="step-1-indicator">
+          <div class="step-circle">1</div>
+          <div class="step-label">Patient Intake</div>
+        </div>
+        <div class="step-line" id="line-1"></div>
+        <div class="step-item" id="step-2-indicator">
+          <div class="step-circle">2</div>
+          <div class="step-label">Follow-up Questions</div>
+        </div>
+        <div class="step-line" id="line-2"></div>
+        <div class="step-item" id="step-3-indicator">
+          <div class="step-circle">3</div>
+          <div class="step-label">Rule Evaluation</div>
+        </div>
+        <div class="step-line" id="line-3"></div>
+        <div class="step-item" id="step-4-indicator">
+          <div class="step-circle">4</div>
+          <div class="step-label">Triage Recommendation</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Demo Case Loader -->
+    <div class="card demo-selector-card">
+      <div class="card-header-compact">
+        <span class="eyebrow">Quick Test Presets</span>
+        <h3 class="section-title-sm">Select a clinical case to test instantly:</h3>
+      </div>
+      <div class="demo-buttons-grid" id="demo-buttons-container">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+
+    <!-- Screen 1: Patient Intake Form -->
+    <section class="card intake-card" id="intake-section">
+      <div class="card-header">
+        <h2 class="card-title">Describe what you are experiencing in your own words.</h2>
+        <p class="card-desc">Enter your symptoms, onset, and feelings using everyday natural language. Our clinical intake assistant will structure the information and check protocol criteria.</p>
+      </div>
+
+      <div class="input-group">
+        <textarea 
+          id="patient-input-text" 
+          rows="4" 
+          placeholder="I have had stomach pain since this morning and it is getting worse."
+          maxlength="2000"
+        ></textarea>
+        <div class="input-footer">
+          <span class="char-count"><span id="char-current">0</span> / 2000 characters</span>
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-clear">Clear</button>
+        </div>
+      </div>
+
+      <div class="card-actions">
+        <button type="button" class="btn btn-primary" id="btn-start-assessment">
+          <span>Start Assessment</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <div class="supported-tags">
+        <span class="tag-label">Supported Pathways:</span>
+        <span class="pathway-pill">Fever</span>
+        <span class="pathway-pill">Injury / Trauma</span>
+        <span class="pathway-pill">Chest Pain</span>
+        <span class="pathway-pill">Breathing Difficulty</span>
+        <span class="pathway-pill">Abdominal Pain</span>
+      </div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div class="loading-panel hidden" id="loading-panel">
+      <div class="spinner"></div>
+      <p class="loading-title" id="loading-status-text">Analyzing clinical description...</p>
+      <p class="loading-desc">Extracting facts, matching pathways, and preparing protocol evaluation.</p>
+    </div>
+
+    <!-- Screen 2: Follow-up Questions Section -->
+    <section class="card followup-card hidden" id="followup-section">
+      <div class="card-header">
+        <div class="card-header-badge" id="category-badge">CATEGORY: CHEST PAIN</div>
+        <h2 class="card-title">Missing Information Follow-up</h2>
+        <p class="card-desc">To safely apply the appropriate clinical triage protocol, we need to clarify a few essential details.</p>
+      </div>
+
+      <!-- Structured Facts Extracted so far -->
+      <div class="facts-summary-box">
+        <h4 class="box-title">Initially Identified Facts:</h4>
+        <div class="facts-chips" id="initial-facts-chips">
+          <!-- Chips injected by JS -->
+        </div>
+      </div>
+
+      <!-- Questions List -->
+      <div class="questions-list" id="questions-container">
+        <!-- Injected by JS -->
+      </div>
+
+      <div class="card-actions">
+        <button type="button" class="btn btn-primary" id="btn-submit-answers">
+          <span>Submit & Evaluate Protocol</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <button type="button" class="btn btn-secondary" id="btn-back-to-intake">Back to Intake</button>
+      </div>
+    </section>
+
+    <!-- Screen 3: Triage Result Section -->
+    <section class="card result-card hidden" id="result-section">
+      <!-- Top Urgency Banner -->
+      <div class="urgency-header" id="urgency-header-bar">
+        <div class="urgency-left">
+          <span class="eyebrow-light">FINAL TRIAGE RECOMMENDATION</span>
+          <h2 class="urgency-level-title" id="res-urgency-level">EMERGENCY</h2>
+          <div class="department-tag" id="res-department">Emergency Department / Resuscitation</div>
+        </div>
+        <div class="rule-badge-box">
+          <div class="rule-badge-label">CITING RULE ID</div>
+          <div class="rule-badge-id" id="res-rule-id">CP-001</div>
+        </div>
+      </div>
+
+      <!-- Human Escalation Notice (if escalated) -->
+      <div class="escalation-alert-card hidden" id="res-escalation-banner">
+        <div class="alert-icon">⚠️</div>
+        <div class="alert-content">
+          <h4 class="alert-title">HUMAN REVIEW REQUIRED</h4>
+          <p class="alert-desc" id="res-escalation-reason">Clinical criteria or unknown fields necessitate direct physician or triage nurse evaluation.</p>
+        </div>
+      </div>
+
+      <!-- Results Grid -->
+      <div class="result-details-grid">
+        <!-- Why This Recommendation -->
+        <div class="sub-card full-width">
+          <h4 class="sub-card-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            Why This Recommendation (Authoritative Rule Reasoning)
+          </h4>
+          <p class="reasoning-text" id="res-reasoning">Evaluating...</p>
+        </div>
+
+        <!-- Patient Reported vs Follow-up Established -->
+        <div class="sub-card half-width">
+          <h4 class="sub-card-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Patient Originally Reported
+          </h4>
+          <ul class="data-list" id="res-patient-reported"></ul>
+        </div>
+
+        <div class="sub-card half-width">
+          <h4 class="sub-card-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Follow-Up Established
+          </h4>
+          <ul class="data-list" id="res-followup-established"></ul>
+        </div>
+
+        <!-- Remaining Unknown Fields -->
+        <div class="sub-card half-width">
+          <h4 class="sub-card-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+            Remaining Unknown Information
+          </h4>
+          <ul class="data-list" id="res-remaining-unknown"></ul>
+        </div>
+
+        <!-- Protocol Evidence & RAG Retrieval -->
+        <div class="sub-card half-width">
+          <h4 class="sub-card-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Rule Evidence & Protocol Source
+          </h4>
+          <p class="evidence-text" id="res-evidence">Retrieving evidence...</p>
+        </div>
+      </div>
+
+      <!-- Complete Formatted Clinical Triage Note -->
+      <div class="triage-note-wrapper">
+        <div class="note-header">
+          <h3 class="note-title">Standardized Triage Note</h3>
+          <button type="button" class="btn btn-secondary btn-sm" id="btn-copy-note">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy Note
+          </button>
+        </div>
+        <pre class="triage-note-pre" id="res-formatted-note"></pre>
+      </div>
+
+      <div class="card-actions">
+        <button type="button" class="btn btn-primary" id="btn-new-assessment">Start New Assessment</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p>TriageAI Prototype &bull; Healthcare Track PS01 &bull; Strictly Non-Diagnostic Clinical Decision Support</p>
+      <p class="footer-sub">All triage routing governed by deterministic rule validation and human escalation.</p>
+    </div>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

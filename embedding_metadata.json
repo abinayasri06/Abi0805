@@ -1,0 +1,122 @@
+[
+  {
+    "rule_id": "CP-001",
+    "complaint": "CHEST_PAIN",
+    "urgency": "EMERGENCY",
+    "department": "Emergency Department / Resuscitation",
+    "text": "CHEST_PAIN rule CP-001: The patient reports active chest discomfort coupled with breathing difficulty, indicating potential acute cardiopulmonary compromise requiring immediate emergency physician evaluation. Evidence: Clinical protocol CP-001 mandates immediate Emergency Department intake for any patient presenting with concurrent acute chest discomfort and shortness of breath due to high risk of acute coronary syndrome or pulmonary embolism. Action: Immediate clinical triaging and continuous monitoring. Initiate acute cardiopulmonary protocol. Escalation: Any report of chest pain combined with breathing difficulty, radiation to jaw/left arm, syncope, or diaphoresis.",
+    "evidence_text": "Clinical protocol CP-001 mandates immediate Emergency Department intake for any patient presenting with concurrent acute chest discomfort and shortness of breath due to high risk of acute coronary syndrome or pulmonary embolism."
+  },
+  {
+    "rule_id": "CP-002",
+    "complaint": "CHEST_PAIN",
+    "urgency": "URGENT",
+    "department": "Cardiology / Acute Medical Assessment",
+    "text": "CHEST_PAIN rule CP-002: Active ongoing chest discomfort without respiratory compromise requires prompt diagnostic evaluation to rule out cardiac ischemia. Evidence: Clinical protocol CP-002 specifies that isolated active chest pain in hemodynamically stable patients requires prompt ECG triage and urgent medical assessment within one hour. Action: Urgent physician evaluation within 30-60 minutes with 12-lead ECG and vital sign telemetry. Escalation: Worsening pain, new onset dyspnea, or lightheadedness requires immediate upgrade to Emergency.",
+    "evidence_text": "Clinical protocol CP-002 specifies that isolated active chest pain in hemodynamically stable patients requires prompt ECG triage and urgent medical assessment within one hour."
+  },
+  {
+    "rule_id": "CP-003",
+    "complaint": "CHEST_PAIN",
+    "urgency": "NON_URGENT",
+    "department": "Outpatient Internal Medicine / Urgent Care",
+    "text": "CHEST_PAIN rule CP-003: Symptoms have fully resolved with no associated breathing difficulty or ongoing distress. Evidence: Clinical protocol CP-003 permits non-urgent scheduled evaluation for fully resolved, transient atypical discomfort without warning features. Action: Routine outpatient clinical evaluation and follow-up diagnostic workup. Escalation: Recurrence of discomfort or onset of shortness of breath.",
+    "evidence_text": "Clinical protocol CP-003 permits non-urgent scheduled evaluation for fully resolved, transient atypical discomfort without warning features."
+  },
+  {
+    "rule_id": "BD-001",
+    "complaint": "BREATHING_DIFFICULTY",
+    "urgency": "EMERGENCY",
+    "department": "Emergency Department / Resuscitation",
+    "text": "BREATHING_DIFFICULTY rule BD-001: Inability to speak in full sentences due to dyspnea indicates severe respiratory distress and imminent ventilatory fatigue. Evidence: Clinical protocol BD-001 classifies severe dyspnea with speech impairment as Category 1/Emergency requiring immediate physician bedside attendance. Action: Immediate emergency airway and respiratory assessment. Administer supplemental oxygen and monitor pulse oximetry. Escalation: Inability to complete sentences, stridor, cyanosis, or exhaustion.",
+    "evidence_text": "Clinical protocol BD-001 classifies severe dyspnea with speech impairment as Category 1/Emergency requiring immediate physician bedside attendance."
+  },
+  {
+    "rule_id": "BD-002",
+    "complaint": "BREATHING_DIFFICULTY",
+    "urgency": "URGENT",
+    "department": "Pulmonology / Acute Respiratory Assessment",
+    "text": "BREATHING_DIFFICULTY rule BD-002: Ongoing respiratory difficulty while still able to speak full sentences warrants timely acute evaluation to prevent decompensation. Evidence: Clinical protocol BD-002 guides urgent routing for persistent shortness of breath where the patient maintains sentence fluency. Action: Urgent clinical review within 60 minutes. Check SpO2, lung auscultation, and peak flow if indicated. Escalation: Deterioration in speaking ability, audible wheezing at rest, or SpO2 drop below 94%.",
+    "evidence_text": "Clinical protocol BD-002 guides urgent routing for persistent shortness of breath where the patient maintains sentence fluency."
+  },
+  {
+    "rule_id": "BD-003",
+    "complaint": "BREATHING_DIFFICULTY",
+    "urgency": "NON_URGENT",
+    "department": "Primary Care / Outpatient Pulmonary Clinic",
+    "text": "BREATHING_DIFFICULTY rule BD-003: Dyspnea episode has resolved and normal breathing is restored without active distress. Evidence: Clinical protocol BD-003 provides non-urgent outpatient routing for episodic respiratory symptoms that have spontaneously resolved. Action: Schedule elective consultation and review previous respiratory history or inhaler usage. Escalation: Any return of shortness of breath.",
+    "evidence_text": "Clinical protocol BD-003 provides non-urgent outpatient routing for episodic respiratory symptoms that have spontaneously resolved."
+  },
+  {
+    "rule_id": "FEV-001",
+    "complaint": "FEVER",
+    "urgency": "EMERGENCY",
+    "department": "Emergency Department",
+    "text": "FEVER rule FEV-001: Fever accompanied by neurological symptoms such as stiff neck or confusion constitutes a critical red-flag presentation. Evidence: Clinical protocol FEV-001 states that fever co-occurring with altered mental status, photophobia, or nuchal rigidity requires emergency septic workup. Action: Immediate medical evaluation for systemic infection or CNS involvement. Blood cultures and isolation precautions. Escalation: Presence of stiff neck, acute confusion, altered consciousness, or non-blanching rash.",
+    "evidence_text": "Clinical protocol FEV-001 states that fever co-occurring with altered mental status, photophobia, or nuchal rigidity requires emergency septic workup."
+  },
+  {
+    "rule_id": "FEV-002",
+    "complaint": "FEVER",
+    "urgency": "URGENT",
+    "department": "Infectious Disease / Urgent Care",
+    "text": "FEVER rule FEV-002: Fever persisting for more than 72 hours requires timely medical investigation to identify the infectious focus and prevent dehydration. Evidence: Clinical protocol FEV-002 identifies fever duration greater than 3 days without central red flags as an urgent outpatient/urgent care priority. Action: Clinical evaluation within 2 hours. Diagnostic blood panel, urinalysis, and hydration assessment. Escalation: Development of delirium, vomiting preventing oral fluids, or respiratory distress.",
+    "evidence_text": "Clinical protocol FEV-002 identifies fever duration greater than 3 days without central red flags as an urgent outpatient/urgent care priority."
+  },
+  {
+    "rule_id": "FEV-003",
+    "complaint": "FEVER",
+    "urgency": "NON_URGENT",
+    "department": "Primary Care / General Outpatient Clinic",
+    "text": "FEVER rule FEV-003: Brief acute fever without red flags is typically manageable in routine primary care settings with appropriate antipyretic guidance. Evidence: Clinical protocol FEV-003 recommends standard primary care consultation for uncomplicated acute febrile illness under 72 hours. Action: General medical assessment, supportive care guidance, hydration advice, and red-flag warning instructions. Escalation: Fever persisting beyond 3 days, temperature exceeding 40\u00b0C, or new rash/confusion.",
+    "evidence_text": "Clinical protocol FEV-003 recommends standard primary care consultation for uncomplicated acute febrile illness under 72 hours."
+  },
+  {
+    "rule_id": "INJ-001",
+    "complaint": "INJURY",
+    "urgency": "EMERGENCY",
+    "department": "Trauma / Emergency Department",
+    "text": "INJURY rule INJ-001: Severe deformity or active uncontrolled hemorrhage represents an acute threat to limb perfusion or hemodynamic stability. Evidence: Clinical protocol INJ-001 designates open injuries, gross bone deformity, or neurovascular compromise as Emergency Level 1/2 trauma activations. Action: Immediate trauma stabilization, hemorrhage control, neurovascular checks, and urgent orthopedic/surgical consultation. Escalation: Gross bone deformity, open fracture, pulsatile bleeding, or loss of distal sensation.",
+    "evidence_text": "Clinical protocol INJ-001 designates open injuries, gross bone deformity, or neurovascular compromise as Emergency Level 1/2 trauma activations."
+  },
+  {
+    "rule_id": "INJ-002",
+    "complaint": "INJURY",
+    "urgency": "URGENT",
+    "department": "Orthopedics / Urgent Treatment Unit",
+    "text": "INJURY rule INJ-002: Inability to bear weight following an acute injury raises suspicion for bony fracture, ligamentous tear, or significant joint disruption. Evidence: Clinical protocol INJ-002 mandates radiographic evaluation and urgent orthopedic review when weight-bearing is impossible post-injury. Action: Urgent radiographic assessment (X-ray), limb splinting, and pain management within 2 hours. Escalation: Development of compartment symptoms, expanding hematoma, or pallor.",
+    "evidence_text": "Clinical protocol INJ-002 mandates radiographic evaluation and urgent orthopedic review when weight-bearing is impossible post-injury."
+  },
+  {
+    "rule_id": "INJ-003",
+    "complaint": "INJURY",
+    "urgency": "NON_URGENT",
+    "department": "Minor Injury Unit / Outpatient Clinic",
+    "text": "INJURY rule INJ-003: Preserved ability to bear weight and lack of deformity suggest minor soft tissue contusion or low-grade sprain. Evidence: Clinical protocol INJ-003 specifies minor injury pathway for ambulatory patients with closed, non-deformed extremity trauma. Action: Clinical examination, RICE protocol advice (Rest, Ice, Compression, Elevation), and analgesia guidance. Escalation: Subsequent inability to bear weight or progressive severe swelling.",
+    "evidence_text": "Clinical protocol INJ-003 specifies minor injury pathway for ambulatory patients with closed, non-deformed extremity trauma."
+  },
+  {
+    "rule_id": "AP-001",
+    "complaint": "ABDOMINAL_PAIN",
+    "urgency": "EMERGENCY",
+    "department": "Emergency Surgical / Acute Care Unit",
+    "text": "ABDOMINAL_PAIN rule AP-001: Peritoneal signs (rigid abdomen) or gastrointestinal hemorrhage (hematemesis) indicate potential visceral perforation or severe hemorrhage. Evidence: Clinical protocol AP-001 mandates immediate surgical emergency triage for patients with abdominal guarding, rigidity, or evidence of GI hemorrhage. Action: Immediate emergency surgical evaluation, nil-by-mouth, IV access, and urgent cross-sectional imaging or endoscopy. Escalation: Rigid abdomen, hematemesis, melena, sudden collapse, or severe unrelenting pain >= 8/10.",
+    "evidence_text": "Clinical protocol AP-001 mandates immediate surgical emergency triage for patients with abdominal guarding, rigidity, or evidence of GI hemorrhage."
+  },
+  {
+    "rule_id": "AP-002",
+    "complaint": "ABDOMINAL_PAIN",
+    "urgency": "URGENT",
+    "department": "General Surgery / Acute Abdominal Assessment",
+    "text": "ABDOMINAL_PAIN rule AP-002: Progressive, worsening abdominal pain raises concern for acute inflammatory conditions (e.g., appendicitis, cholecystitis, diverticulitis). Evidence: Clinical protocol AP-002 classifies progressive worsening abdominal pain without acute peritonitis as an urgent surgical assessment priority. Action: Urgent clinical examination, abdominal ultrasound/CT, and laboratory inflammatory markers within 2 hours. Escalation: Rapid pain escalation, fever, or onset of localized rebound tenderness.",
+    "evidence_text": "Clinical protocol AP-002 classifies progressive worsening abdominal pain without acute peritonitis as an urgent surgical assessment priority."
+  },
+  {
+    "rule_id": "AP-003",
+    "complaint": "ABDOMINAL_PAIN",
+    "urgency": "NON_URGENT",
+    "department": "Gastroenterology / Outpatient Clinic",
+    "text": "ABDOMINAL_PAIN rule AP-003: Stable, non-progressive abdominal discomfort without red-flag symptoms is appropriate for outpatient evaluation. Evidence: Clinical protocol AP-003 assigns non-urgent status to stable, mild-to-moderate abdominal symptoms without peritoneal irritation. Action: Outpatient physical exam, dietary review, and elective functional or endoscopic workup if symptoms persist. Escalation: Pain begins to intensify, localized rebound tenderness develops, or vomiting begins.",
+    "evidence_text": "Clinical protocol AP-003 assigns non-urgent status to stable, mild-to-moderate abdominal symptoms without peritoneal irritation."
+  }
+]
